@@ -1,8 +1,8 @@
 package main
 
 import (
+	"dogsyears/dog"
 	"fmt"
-	"myprojects/012-level-12/dog"
 )
 
 func main() {
