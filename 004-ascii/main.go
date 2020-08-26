@@ -13,5 +13,5 @@ func main() {
 		fmt.Printf("%b\t%d\t%#x\t%c\n", i, i, i, i)
 	}
 
-	randompassword.NewRandomPassword()
+	randompassword.NewRandomPassword(30)
 }

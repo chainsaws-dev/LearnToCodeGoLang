@@ -4,7 +4,6 @@ package randompassword
 import (
 	"crypto/rand"
 	"fmt"
-	"log"
 	"math/big"
 	"strings"
 )
@@ -38,13 +37,13 @@ func (CharacterRange *Int64NumberRange) GenerateRandomChar(password *strings.Bui
 }
 
 // NewRandomPassword - создаёт новый случайный пароль длинны 30 символов
-func NewRandomPassword() {
+func NewRandomPassword(PasswordLen int) string {
 
 	var password strings.Builder
 
-	GenerateRandomPassword(&password, 30)
+	GenerateRandomPassword(&password, PasswordLen)
 
-	fmt.Println(password.String())
+	return password.String()
 }
 
 // GenerateRandomPassword - генерируем рандомное число и выбираем из ASCII таблицы символ
@@ -63,8 +62,6 @@ func GenerateRandomPassword(password *strings.Builder, PasswordLen int) {
 			UpperCase.GenerateRandomChar(password)
 		case SeqNo == 2:
 			LowerCase.GenerateRandomChar(password)
-		default:
-			log.Fatalln("Неожиданное значение случайного числа для выборки символа", SeqNo)
 		}
 	}
 }
